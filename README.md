@@ -1,4 +1,5 @@
-Mavs Jewelry 
+Mavs Jewelry
+Sitio web en vivo: https://mavs-jewelry.netlify.app/
  
 Este proyecto es un sitio web responsivo diseñado para un emprendimiento de joyería artesanal fina, especializada en piezas de plata nacional, piedras semipreciosas, mostacillas calibradas Miyuki y técnicas avanzadas de alambrismo. El objetivo principal de esta plataforma es transmitir la elegancia, la resiliencia y el misticismo detrás de cada joya hecha a mano por su fundadora. 
  
