@@ -1,0 +1,230 @@
+/* ==========================================================================
+   ESTILOS GENERALES 
+   ========================================================================== */
+
+/* Icono alternativo para Concursos en el menú */
+#nav ul li a.fa-gift::before {
+    content: "\f06b"; /* Código universal del regalo */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+
+/* Logo de la marca */
+#logo img {
+    width: 150px;
+    transition: transform 0.3s ease; /* Transición suave para el logo */
+}
+
+#logo img:hover {
+    transform: scale(1.08); /* Agranda el logo al pasar el mouse */
+}
+
+/* Fuerza a que el footer y su último elemento no empujen hacia abajo */
+footer, #footer {
+    margin-bottom: 0 !important;
+    padding-bottom: 40px !important; 
+}
+
+
+/* ==========================================================================
+   GALERÍA DE PRODUCTOS 
+   ========================================================================== */
+
+/* Contenedor de la foto: Mantiene el marco fijo y esconde los excesos al agrandar */
+#productos .image.fit {
+    overflow: hidden !important; 
+    border-radius: 0 !important;
+}
+
+/* fotos de los productos */
+#productos .image.fit img {
+    width: 100%;
+    height: 180px;    /* Fuerza la misma altura */
+    object-fit: cover; /* Evita que se deformen */
+    transition: transform 0.3s ease-in-out !important;
+    display: block;
+}
+
+/*Efecto cuando pasas el mouse por encima de la foto del producto */
+#productos .image.fit img:hover {
+    transform: scale(1.10) !important; /* Agranda la foto un 10% suavemente */
+}
+
+/* Cambiar el borde del marco al hacer hover */
+#productos .image.fit:hover {
+    border: 2px solid #735867 !important; /* Línea de color aplicada al marco fijo */
+}
+
+
+/* ==========================================================================
+   SISTEMA DE REJILLA 
+   ========================================================================== */
+
+/* --- Bloque de 6 Columnas --- */
+.contenedor-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.col-2-personalizado {
+    flex: 0 0 calc(16.666% - 13px) !important;
+    max-width: calc(16.666% - 13px) !important;
+    box-sizing: border-box !important;
+}
+
+.col-2-personalizado .image.fit {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+.col-2-personalizado img {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* --- Bloque de 5 Columnas --- */
+.contenedor-grid-5 {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.col-5-personalizado {
+    flex: 0 0 calc(20% - 12px) !important;
+    max-width: calc(20% - 12px) !important;
+    box-sizing: border-box !important;
+}
+
+.col-5-personalizado .image.fit {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+.col-5-personalizado img {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+
+/* ==========================================================================
+   ALINEACIÓN DE REDES SOCIALES 
+   ========================================================================== */
+
+/* Forzamos a que la lista sea una fila horizontal en todas las pantallas */
+.redes-lista {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 15px 0 !important;
+    display: flex !important;
+    flex-wrap: wrap !important;    
+    gap: 25px !important;         /* Separación entre cada red social*/
+    justify-content: flex-start !important; 
+}
+
+.redes-lista li {
+    padding: 0 !important;
+    margin: 0 !important;
+    display: inline-block !important;
+}
+
+/* Alineamos el contenedor del enlace */
+.redes-lista li a {
+    display: inline-flex !important;
+    align-items: center !important;       /* Centrado vertical perfecto */
+    text-decoration: none !important;
+    white-space: nowrap !important;
+}
+
+/* Forzamos al icono a separarse de la palabra */
+.redes-lista li a::before {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 25px !important;       
+    height: 25px !important;
+    margin-right: 8px !important; 
+    text-align: center !important;
+}
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO 
+   ========================================================================== */
+
+/* Barra de scroll personalizada para las secciones deslizables */
+.contenedor-grid::-webkit-scrollbar,
+.contenedor-grid-5::-webkit-scrollbar {
+    height: 4px !important;
+    display: block !important;
+}
+
+.contenedor-grid::-webkit-scrollbar-track,
+.contenedor-grid-5::-webkit-scrollbar-track {
+    background: #f1f1f1 !important;
+    border-radius: 10px !important;
+}
+
+.contenedor-grid::-webkit-scrollbar-thumb,
+.contenedor-grid-5::-webkit-scrollbar-thumb {
+    background: #735867 !important; 
+    border-radius: 10px !important;
+}
+
+/* Ajustes de deslizamiento horizontal en celulares (Hasta 768px de ancho) */
+@media (max-width: 768px) {
+    
+    /* Carrusel horizontal para 6 fotos */
+    .contenedor-grid {
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        justify-content: flex-start !important;
+        padding-bottom: 15px !important; /* Espacio para la barra de scroll */
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory !important;
+    }
+
+    .col-2-personalizado {
+        flex: 0 0 65% !important;
+        max-width: 65% !important;
+        scroll-snap-align: start !important;
+    }
+
+    /* Carrusel horizontal para 5 fotos */
+    .contenedor-grid-5 {
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        justify-content: flex-start !important;
+        padding-bottom: 15px !important;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory !important;
+    }
+
+    .col-5-personalizado {
+        flex: 0 0 65% !important;
+        max-width: 65% !important;
+        scroll-snap-align: start !important;
+    }
+}
+
+/* Ajuste extremo para pantallas mini (Mobile S - Hasta 360px de ancho) */
+@media screen and (max-width: 360px) {
+    h3, h2 {
+        font-size: 1.4em !important;
+        word-wrap: break-word !important;
+        hyphens: auto !important;
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+}
